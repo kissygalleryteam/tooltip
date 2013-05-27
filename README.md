@@ -7,3 +7,5 @@
 ## changelog
 
 ### V1.0
+
+- 规矩新版Gallery修改组件
