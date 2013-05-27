@@ -1,0 +1,13 @@
+{
+    "name": "tooltip",
+    "version": "1.0",
+    "desc": "Tooltip，连接Tooltip和其触发节点，并根据屏幕空间计算显示位置",
+    "cover": "",
+    "author": {
+        "name": "neekey",
+        "email": "ni184775761@gmail.com",
+        "page": "https://github.com/kissygalleryteam/tooltip"
+    },
+    "type": "kissy-pie",
+    "type-url": "http://abc.alibaba-inc.com/r/kissy-pie"
+}
