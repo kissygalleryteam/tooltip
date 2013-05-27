@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## tooltip
 
 * 版本：1.0
@@ -8,8 +7,3 @@
 ## changelog
 
 ### V1.0
-
-
-=======
-tooltip
->>>>>>> 20dcecb94cf99642a1c21734647db68b8a31a876
