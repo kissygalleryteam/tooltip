@@ -1,1 +1,2 @@
-/*!build time : 2014-07-30 9:30:48 AM*/
+/*!build time : 2015-01-05 5:11:24 PM*/
+KISSY.config("modules",{"kg/tooltip/2.2.0/index":{requires:["node"]}});

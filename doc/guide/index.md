@@ -39,7 +39,7 @@
 
 ```javascript
 // 引入Tooltip，注意bubble.css为可选
-KISSY.use('kg/tooltip/2.0.0/index, kg/tooltip/2.0.0/assets/bubble.css', function(S, Tooltip) {
+KISSY.use('kg/tooltip/2.2.0/index, kg/tooltip/2.2.0/assets/bubble.css', function(S, Tooltip) {
 
     Tooltip.attach({
         trigger: '.J_Trigger',      // 用于触发Tooltip出现的节点

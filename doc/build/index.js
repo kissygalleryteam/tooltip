@@ -1,7 +1,7 @@
 /*
 combined files : 
 
-kg/tooltip/2.0.0/index
+kg/tooltip/2.2.0/index
 
 */
 /**
@@ -9,7 +9,7 @@ kg/tooltip/2.0.0/index
  * @author neekey<ni184775761@gmail.com>
  * @module tooltip
  **/
-KISSY.add('kg/tooltip/2.0.0/index',function (S) {
+KISSY.add('kg/tooltip/2.2.0/index',function ( S, Node ) {
 
     var ARROW_HOOK = '.J_TooltipArrow';
     var REFER_POS = 'center';
@@ -31,14 +31,14 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
 
         attach: function( cfg ){
             var self = this;
-            var triggers = S.all( cfg.trigger );
-            var tooltip = S.all( cfg.tooltip );
+            var triggers = Node.all( cfg.trigger );
+            var tooltip = Node.all( cfg.tooltip );
             var onShow = cfg.onShow;
 
             triggers.each(function( trigger ){
-                trigger = S.one( trigger );
+                trigger = Node.one( trigger );
                 // 参考点只能有一个
-                var refer = S.one( trigger.all( cfg.refer ) ) || trigger;
+                var refer = Node.one( trigger.all( cfg.refer ) ) || trigger;
 
                 cfg.onShow = function( t, tl ){
                     self.locate( refer, tooltip, cfg );
@@ -50,10 +50,10 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
         },
 
         freeze: function( cfg ){
-            var tooltip = S.one( cfg.tooltip );
-            var refer = S.one( cfg.refer );
+            var tooltip = Node.one( cfg.tooltip );
+            var refer = Node.one( cfg.refer );
             this.locate( refer, tooltip, cfg );
-            S.one( tooltip ).show();
+            Node.one( tooltip ).show();
         },
 
         /**
@@ -65,8 +65,8 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
          * @param {Function} option.onShow 当Tooltip消失时逻辑
          */
         connect: function( trigger, tooltip, option ){
-            trigger = S.one( trigger );
-            tooltip = S.one( tooltip );
+            trigger = Node.one( trigger );
+            tooltip = Node.one( tooltip );
             option = option || {};
             var hideCb = option.onHide;
             var showCb = option.onShow;
@@ -110,10 +110,10 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
          */
         locate: function( refer, tooltip, option ){
 
-            refer = S.one( refer );
-            tooltip = S.one( tooltip );
+            refer = Node.one( refer );
+            tooltip = Node.one( tooltip );
             option = option || {};
-            var container = S.one( option.container );
+            var container = Node.one( option.container );
             var customPosition = option.position;
 
             // 默认显示Tooltip，以计算宽高
@@ -131,8 +131,8 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
             var tooltipArrow = tooltip.all( arrowHook );
 
             // 获取窗口/页面高度，页面滚动信息等
-            var winHeight = S.one( window ).height();
-            var winWidth = S.one( window ).width();
+            var winHeight = Node.one( window ).height();
+            var winWidth = Node.one( window ).width();
             var docScrollTop = S.DOM.scrollTop();
             var docScrollLeft = S.DOM.scrollLeft();
 
@@ -380,7 +380,7 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
                 container.append( tooltip );
             }
             else {
-                S.one( document.body ).append( tooltip );
+                Node.one( document.body ).append( tooltip );
             }
 
             // 设置Tooltip位置
@@ -433,4 +433,6 @@ KISSY.add('kg/tooltip/2.0.0/index',function (S) {
             };
         }
     };
-});
+}, { requires: [
+    'node'
+]});

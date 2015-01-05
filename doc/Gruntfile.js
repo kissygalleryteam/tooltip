@@ -28,14 +28,14 @@ module.exports = function(grunt) {
                 ],
                 depFilePath: 'mods.js',
                 fixModuleName:true,
-                map: [["<%= pkg.name %>/src/", "kg/<%= pkg.name %>/<%= pkg.version %>/"]]
+                map: [["<%= pkg.name %>/", "kg/<%= pkg.name %>/<%= pkg.version %>/"]]
             },
             main: {
                 files: [
                     {
                         expand: true,
-                        cwd: SRC,
-                        src: [ './*.js' ],
+                        cwd: '.',
+                        src: [ './index.js' ],
                         dest: 'build/'
                     }
                 ]
